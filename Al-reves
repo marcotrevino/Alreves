@@ -1,0 +1,37 @@
+// Programa para ingresar un número entero de 4 dígitos y ésta
+// devolverá el número al revés o invertido 
+
+#include <stdio.h>
+
+int main(){
+    
+   int numero;
+   int unidades,decenas,centenas,miles;
+   
+  printf("\t\t Programa para invertir  un número entero de 4 dígitos\n\n");
+  
+  printf("Ingresa un número entero de 4 dígitos: ");
+  scanf("%d", &numero);
+
+//En este ciclo while, se revisa que el número sea de 4 dígitos, si no 
+//es así, te vuelve a preguntar el número
+
+while (numero >9999 || numero < 1000 ) {
+    printf("El valor no es de 4 dígitos\n\n");
+    printf("Vuelve a ingresar un número entero de 4 dígitos: ");
+    scanf("%d", &numero);
+}
+   //Con estas operaciones matemáticas, se obtienen los números por 
+   //separado y se hace la operación del residuo de la división entre 
+   //el número 10 (exceptuando los miles, que ya no es necesario) y en base a esos 
+   //números los imprimimos de acuerdo a su lugar en el número obtenido
+   
+    unidades=numero % 10;
+    decenas=(numero/10) % 10;
+    centenas=(numero/100) %10;
+    miles=(numero/1000);
+    printf("El número invertido es: %d%d%d%d \n",unidades,decenas,centenas,miles);
+    
+    return 0;
+}
+
